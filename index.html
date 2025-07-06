@@ -259,14 +259,14 @@
                             </div>
                             <h4 class="font-semibold">Phase 3: First floor</h4>
                         </div>
-                        <p class="text-sm text-gray-600">In Progress (Target: December 2023)</p>
+                        <p class="text-sm text-gray-600">In Progress (Target: December 2025)</p>
                     </div>
                 </div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white p-4 rounded-lg shadow-md">
-                    <img src="C:\Users\QAIS\Desktop\donationsite\Not needed\image3.png" alt="Foundation Work" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <img src="C:\Users\QAIS\Desktop\mosque donation\image3.png" alt="Foundation Work" class="w-full h-48 object-cover rounded-t-lg mb-4">
                     <h4 class="font-semibold text-lg mb-2">Foundation Work</h4>
                     <p class="text-gray-600 text-sm">Completed with reinforced concrete to ensure stability for decades to come.</p>
                 </div>
@@ -349,7 +349,7 @@
                 <!-- Bank Transfer Info -->
                 <div class="lg:w-1/2 bg-white p-8 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-semibold mb-6 text-emerald-800">Bank Transfer Details</h3>
-                    <p class="mb-6 text-gray-700">You can also make a direct bank transfer to our dedicated mosque construction account:</p>
+                    <p class="mb-6 text-gray-700">You can make a direct bank transfer to our dedicated mosque construction account:</p>
                     
                     <div class="bg-emerald-50 p-6 rounded-lg mb-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -359,7 +359,7 @@
                             </div>
                             <div>
                                 <h4 class="font-medium text-emerald-800">Account Number:</h4>
-                                <p class="text-gray-700">1234567890</p>
+                                <p class="text-gray-700">7037128655</p>
                             </div>
                             <div>
                                 <h4 class="font-medium text-emerald-800">Account Name:</h4>
@@ -546,9 +546,9 @@
                 <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-emerald-100 mb-4">
                     <i class="fas fa-check text-emerald-600"></i>
                 </div>
-                <h3 class="text-lg font-medium text-gray-900 mb-2">Thank You for Your Donation!</h3>
+                <h3 class="text-lg font-medium text-gray-900 mb-2">Thank You <span id="donation-name" class="font-bold"></span> !</h3>
                 <div class="mt-2">
-                    <p class="text-sm text-gray-500" id="donation-message">Your generous contribution of <span id="donation-amount" class="font-bold">₦0</span> will help us complete the construction of Bells University Mosque. May Allah reward you abundantly for your Sadaqah Jariyah.</p>
+                    <p class="text-sm text-gray-500" id="donation-message">You can make a direct bank transfer to our dedicated mosque construction account.<br>Your generous contribution of <span id="donation-amount" class="font-bold">₦0</span> will help us complete the construction of Bells University Mosque. May Allah reward you abundantly for your Sadaqah Jariyah.</p>
                 </div>
                 <div class="mt-6">
                     <button onclick="closeModal('donation-modal')" type="button" class="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-emerald-600 text-base font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 sm:text-sm">
@@ -596,7 +596,7 @@
                 <div class="container mx-auto px-4 py-3 flex justify-between items-center">
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-mosque mosque-icon"></i>
-                        <span class="text-xl font-bold">BUMSS Admin</span>
+                        <span class="text-xl font-bold"> Welcome BUMSS Admin !</span>
                     </div>
                     <button onclick="logoutAdmin()" class="bg-emerald-600 hover:bg-emerald-700 px-3 py-1 rounded">Logout</button>
                 </div>
@@ -760,8 +760,8 @@
             // For demo purposes, we'll just show the confirmation
             
             document.getElementById('donation-amount').textContent = `₦${parseInt(amount).toLocaleString()}`;
+            document.getElementById('donation-name').textContent = name;
             showModal('donation-modal');
-            
             // Reset form
             document.getElementById('custom-amount').value = '';
             document.getElementById('donor-name').value = '';
