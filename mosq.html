@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bells University Mosque Construction Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .islamic-pattern {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23f5f5f5" d="M50 0L100 50L50 100L0 50Z"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.1;
+        }
+        
+        .mosque-icon {
+            font-size: 2rem;
+            color: #b7ebdc;
+        }
+        
+        .progress-bar {
+            height: 20px;
+            border-radius: 10px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: #065f46;
+            transition: width 0.5s ease-in-out;
+        }
+        
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .modal {
+            transition: all 0.3s ease;
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .admin-table th, .admin-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .admin-table tr:hover {
+            background-color: #f9fafb;
+        }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-emerald-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-mosque mosque-icon"></i>
+                <span class="text-xl font-bold">Bells University Mosque</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-emerald-200 transition">Home</a>
+                <a href="#about" class="hover:text-emerald-200 transition">About</a>
+                <a href="#progress" class="hover:text-emerald-200 transition">Progress</a>
+                <a href="#donate" class="hover:text-emerald-200 transition">Donate</a>
+                <a href="#contact" class="hover:text-emerald-200 transition">Contact</a>
+                <button onclick="showAdminLogin()" class="bg-emerald-600 hover:bg-emerald-700 px-3 py-1 rounded">Admin</button>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-emerald-700 px-4 pb-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="hover:text-emerald-200 transition">Home</a>
+                <a href="#about" class="hover:text-emerald-200 transition">About</a>
+                <a href="#progress" class="hover:text-emerald-200 transition">Progress</a>
+                <a href="#donate" class="hover:text-emerald-200 transition">Donate</a>
+                <a href="#contact" class="hover:text-emerald-200 transition">Contact</a>
+                <button onclick="showAdminLogin()" class="bg-emerald-600 hover:bg-emerald-700 px-3 py-1 rounded w-full text-left">Admin</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<section
+  id="home"
+  class="relative py-16 md:py-24 bg-cover bg-center bg-no-repeat text-white"
+  style="background-image: url('https://source.unsplash.com/1600x900/?mosque');"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-emerald-900 bg-opacity-70 z-0"></div>
+
+  <!-- Content -->
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
+    <div class="md:w-1/2 mb-10 md:mb-0">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Building Bells University Mosque</h1>
+      <p class="text-lg mb-6">
+        Help us establish a house of Allah where the community can gather for worship,
+        education, and spiritual growth. Your donation will be a continuous charity
+        (Sadaqah Jariyah) for you and your loved ones.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="#donate"
+          class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+        >
+          Donate Now
+        </a>
+        <a
+          href="#about"
+          class="border-2 border-white hover:bg-white hover:text-emerald-900 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img
+        src="image2.png"
+        class="rounded-lg shadow-2xl max-w-full h-auto"
+      
+    
+        alt="Mosque Construction"
+      />
+    </div>
+  </div>
+</section>
+
+    <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-emerald-900">
+      About The Project
+    </h2>
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <!-- Image -->
+      <div class="md:w-1/2">
+            <img
+        src="C:\Users\QAIS\Desktop\donationsite\Not needed\image4.png"
+        alt="Mosque Design"
+        class="w-[300px] md:w-[400px] lg:w-[500px] h-auto mx-auto rounded-lg shadow-lg"
+/>
+
+      </div>
+
+      <!-- Text Content -->
+      <div class="md:w-1/2">
+        <h3 class="text-2xl font-semibold mb-4 text-emerald-800">
+          A Center for Worship and Community
+        </h3>
+        <p class="mb-4 text-gray-700">
+          Bells University Mosque will be more than just a place of prayer. It will
+          serve as a hub for the Muslim community, offering:
+        </p>
+        <ul class="mb-6 space-y-3 text-gray-700">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-emerald-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Daily prayers and Jumu'ah congregation</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-emerald-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Quran classes for children and adults</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-emerald-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Islamic lectures and seminars</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-emerald-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Islamic services and community events</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-emerald-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Charitable activities and food distribution</span>
+          </li>
+        </ul>
+        <p class="text-gray-700">
+          The Prophet Muhammad (peace be upon him) said:
+          <span class="italic text-emerald-700">
+            "Whoever builds a mosque for Allah, Allah will build for him a house in Paradise."
+          </span>
+          <span class="text-sm text-gray-500">(Bukhari & Muslim)</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Progress Section -->
+    <section id="progress" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-emerald-900">Construction Progress</h2>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-emerald-800">Current Phase: Roofing</h3>
+                <div class="mb-4">
+                    <div class="flex justify-between mb-1">
+                        <span>Funds Raised</span>
+                        <span>₦8,500,000 / ₦15,000,000</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 56.67%"></div>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-4">We've completed the foundation and walls, and now we're working on the roof structure. Your donations are helping us move forward with this critical phase.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-emerald-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-emerald-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-emerald-600"></i>
+                            </div>
+                            <h4 class="font-semibold">Phase 1: Foundation</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Completed March 2023</p>
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-emerald-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-emerald-600"></i>
+                            </div>
+                            <h4 class="font-semibold">Phase 2: Ground floor</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Completed August 2023</p>
+                    </div>
+                    <div class="bg-amber-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-hammer text-amber-600"></i>
+                            </div>
+                            <h4 class="font-semibold">Phase 3: First floor</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">In Progress (Target: December 2023)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="C:\Users\QAIS\Desktop\donationsite\Not needed\image3.png" alt="Foundation Work" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h4 class="font-semibold text-lg mb-2">Foundation Work</h4>
+                    <p class="text-gray-600 text-sm">Completed with reinforced concrete to ensure stability for decades to come.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Wall Construction" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h4 class="font-semibold text-lg mb-2">Wall Construction</h4>
+                    <p class="text-gray-600 text-sm">Brick walls with proper insulation for temperature regulation.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Roof Work" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h4 class="font-semibold text-lg mb-2">First Floor Structure</h4>
+                    <p class="text-gray-600 text-sm">Current work in progress with steel beams and wood framing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="py-16 bg-emerald-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-emerald-900">Support the Masjid</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Donation Options -->
+                <div class="lg:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6 text-emerald-800">Make a Donation</h3>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-lg font-medium mb-4">Select Amount (₦)</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <button onclick="selectAmount(1000)" class="donation-card bg-white border-2 border-emerald-300 hover:border-emerald-600 text-emerald-800 font-medium py-4 px-4 rounded-lg transition duration-300">
+                                ₦1,000
+                            </button>
+                            <button onclick="selectAmount(5000)" class="donation-card bg-white border-2 border-emerald-300 hover:border-emerald-600 text-emerald-800 font-medium py-4 px-4 rounded-lg transition duration-300">
+                                ₦5,000
+                            </button>
+                            <button onclick="selectAmount(10000)" class="donation-card bg-white border-2 border-emerald-300 hover:border-emerald-600 text-emerald-800 font-medium py-4 px-4 rounded-lg transition duration-300">
+                                ₦10,000
+                            </button>
+                            <button onclick="selectAmount(20000)" class="donation-card bg-white border-2 border-emerald-300 hover:border-emerald-600 text-emerald-800 font-medium py-4 px-4 rounded-lg transition duration-300">
+                                ₦20,000
+                            </button>
+                            <button onclick="selectAmount(50000)" class="donation-card bg-white border-2 border-emerald-300 hover:border-emerald-600 text-emerald-800 font-medium py-4 px-4 rounded-lg transition duration-300">
+                                ₦50,000
+                            </button>
+                            <button onclick="selectAmount(100000)" class="donation-card bg-white border-2 border-emerald-300 hover:border-emerald-600 text-emerald-800 font-medium py-4 px-4 rounded-lg transition duration-300">
+                                ₦100,000
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="custom-amount" class="block text-lg font-medium mb-2">Or enter custom amount</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">₦</span>
+                            <input type="number" id="custom-amount" placeholder="Enter amount" class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="donor-name" class="block text-lg font-medium mb-2">Full Name</label>
+                        <input type="text" id="donor-name" placeholder="Your name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="donor-email" class="block text-lg font-medium mb-2">Email Address</label>
+                        <input type="email" id="donor-email" placeholder="Your email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="donor-message" class="block text-lg font-medium mb-2">Optional Message</label>
+                        <textarea id="donor-message" rows="3" placeholder="Any special dedication or message..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"></textarea>
+                    </div>
+                    
+                    <button onclick="submitDonation()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Proceed to Payment
+                    </button>
+                </div>
+                
+                <!-- Bank Transfer Info -->
+                <div class="lg:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6 text-emerald-800">Bank Transfer Details</h3>
+                    <p class="mb-6 text-gray-700">You can also make a direct bank transfer to our dedicated mosque construction account:</p>
+                    
+                    <div class="bg-emerald-50 p-6 rounded-lg mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-medium text-emerald-800">Bank Name:</h4>
+                                <p class="text-gray-700">Jaiz Bank</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-emerald-800">Account Number:</h4>
+                                <p class="text-gray-700">1234567890</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-emerald-800">Account Name:</h4>
+                                <p class="text-gray-700">Bells University Muslim Student Society</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-emerald-800">Sort Code:</h4>
+                                <p class="text-gray-700">123-456</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="mb-6 text-gray-700">After making your transfer, please click the button below to confirm your donation so we can properly acknowledge your contribution.</p>
+                    
+                    <button onclick="showDonationConfirmation()" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        I've Made a Transfer
+                    </button>
+                    
+                    <div class="mt-8 p-4 bg-gray-100 rounded-lg">
+                        <h4 class="font-semibold mb-2 text-emerald-800">Donation Rewards</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-amber-500 mt-1 mr-2"></i>
+                                <span>All donors will be recognized on our website (optional)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-amber-500 mt-1 mr-2"></i>
+                                <span>Major donors (₦100,000+) will have their names engraved on a plaque in the masjid</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-amber-500 mt-1 mr-2"></i>
+                                <span>All donations are tax-deductible</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-emerald-900">Contact Us</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 text-emerald-800">Project Committee</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium">Imam Abdullahi Musa</h4>
+                                <p class="text-gray-600">Project Director</p>
+                                <p class="text-gray-600"><i class="fas fa-phone mr-2"></i> +234 801 234 5678</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Brother Yusuf Ahmed</h4>
+                                <p class="text-gray-600">Fundraising Coordinator</p>
+                                <p class="text-gray-600"><i class="fas fa-phone mr-2"></i> +234 802 345 6789</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Sister Aisha Mohammed</h4>
+                                <p class="text-gray-600">Community Outreach</p>
+                                <p class="text-gray-600"><i class="fas fa-phone mr-2"></i> +234 803 456 7890</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-emerald-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 text-emerald-800">Visit the Site</h3>
+                        <p class="mb-4 text-gray-700">Km. 8 Idiroko Rd, Benja village, Ota 112104, Ogun State,Nigeria</p>
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.963912201094!2d8.516014314793955!3d12.00267329182267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAwJzA5LjYiTiA4wrAzMScwNy4xIkU!5e0!3m2!1sen!2sng!4v1620000000000!5m2!1sen!2sng" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 text-emerald-800">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="contact-name" class="block text-gray-700 mb-2">Your Name</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-email" class="block text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-subject" class="block text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="contact-subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="contact-message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"></textarea>
+                            </div>
+                            <button type="button" onclick="submitContactForm()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="mt-6 bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 text-emerald-800">Prayer Times</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="bg-emerald-800 text-white">
+                                        <th class="py-2 px-4 text-left">Prayer</th>
+                                        <th class="py-2 px-4 text-left">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4">Fajr</td>
+                                        <td class="py-2 px-4">5:30 AM</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4">Dhuhr</td>
+                                        <td class="py-2 px-4">1:30 PM</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4">Asr</td>
+                                        <td class="py-2 px-4">4:45 PM</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4">Maghrib</td>
+                                        <td class="py-2 px-4">6:45 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4">Isha</td>
+                                        <td class="py-2 px-4">8:00 PM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600">*Times are updated monthly based on the Islamic calendar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-mosque mosque-icon"></i>
+                        <span class="text-xl font-bold">Bells University Masjid</span>
+                    </div>
+                    <p class="text-emerald-200">Building a house of Allah for present and future generations.</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="text-emerald-200 hover:text-white transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-emerald-200 hover:text-white transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-emerald-200 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-emerald-200 hover:text-white transition">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-emerald-200">© 2025 Bells University Mosque Construction Project</p>
+                    <p class="text-sm text-emerald-300 mt-1">All Rights Reserved by QAYSH Technologies.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donation Confirmation Modal -->
+    <div id="donation-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 mx-4">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-emerald-100 mb-4">
+                    <i class="fas fa-check text-emerald-600"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900 mb-2">Thank You for Your Donation!</h3>
+                <div class="mt-2">
+                    <p class="text-sm text-gray-500" id="donation-message">Your generous contribution of <span id="donation-amount" class="font-bold">₦0</span> will help us complete the construction of Bells University Mosque. May Allah reward you abundantly for your Sadaqah Jariyah.</p>
+                </div>
+                <div class="mt-6">
+                    <button onclick="closeModal('donation-modal')" type="button" class="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-emerald-600 text-base font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 sm:text-sm">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 mx-4">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-emerald-100 mb-4">
+                    <i class="fas fa-lock text-emerald-600"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Admin Login</h3>
+                <div class="mt-2">
+                    <div class="mb-4">
+                        <label for="admin-username" class="block text-sm font-medium text-gray-700 text-left mb-1">Username</label>
+                        <input type="text" id="admin-username" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="admin-password" class="block text-sm font-medium text-gray-700 text-left mb-1">Password</label>
+                        <input type="password" id="admin-password" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-center space-x-4">
+                    <button onclick="closeModal('admin-login-modal')" type="button" class="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 sm:text-sm">
+                        Cancel
+                    </button>
+                    <button onclick="adminLogin()" type="button" class="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-emerald-600 text-base font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 sm:text-sm">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="fixed inset-0 bg-gray-100 z-50 hidden overflow-auto">
+        <div class="min-h-screen">
+            <div class="bg-emerald-800 text-white shadow-lg">
+                <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-mosque mosque-icon"></i>
+                        <span class="text-xl font-bold">BUMSS Admin</span>
+                    </div>
+                    <button onclick="logoutAdmin()" class="bg-emerald-600 hover:bg-emerald-700 px-3 py-1 rounded">Logout</button>
+                </div>
+            </div>
+            
+            <div class="container mx-auto px-4 py-8">
+                <h2 class="text-2xl font-bold mb-6 text-emerald-900">Donation Records</h2>
+                
+                <div class="bg-white shadow-md rounded-lg overflow-hidden mb-8">
+                    <div class="p-4 bg-emerald-50 border-b border-emerald-100">
+                        <div class="flex flex-col md:flex-row justify-between items-center">
+                            <h3 class="text-lg font-semibold text-emerald-800">Recent Donations</h3>
+                            <div class="mt-2 md:mt-0">
+                                <input type="text" id="admin-search" placeholder="Search donations..." class="px-4 py-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="admin-table">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="font-semibold text-left py-3 px-4">Date</th>
+                                    <th class="font-semibold text-left py-3 px-4">Name</th>
+                                    <th class="font-semibold text-left py-3 px-4">Amount</th>
+                                    <th class="font-semibold text-left py-3 px-4">Message</th>
+                                    <th class="font-semibold text-left py-3 px-4">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="donation-records">
+                                <!-- Sample data - in a real app this would come from a database -->
+                                <tr>
+                                    <td class="py-3 px-4">2023-07-15</td>
+                                    <td class="py-3 px-4">Ahmed Ibrahim</td>
+                                    <td class="py-3 px-4">₦50,000</td>
+                                    <td class="py-3 px-4">For the construction of the minaret</td>
+                                    <td class="py-3 px-4"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Verified</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4">2023-07-14</td>
+                                    <td class="py-3 px-4">Fatima Yusuf</td>
+                                    <td class="py-3 px-4">₦10,000</td>
+                                    <td class="py-3 px-4">May Allah accept</td>
+                                    <td class="py-3 px-4"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Verified</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4">2023-07-13</td>
+                                    <td class="py-3 px-4">Mohammed Kabir</td>
+                                    <td class="py-3 px-4">₦100,000</td>
+                                    <td class="py-3 px-4">For the roofing project</td>
+                                    <td class="py-3 px-4"><span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4">2023-07-12</td>
+                                    <td class="py-3 px-4">Amina Suleiman</td>
+                                    <td class="py-3 px-4">₦5,000</td>
+                                    <td class="py-3 px-4">-</td>
+                                    <td class="py-3 px-4"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Verified</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4">2023-07-10</td>
+                                    <td class="py-3 px-4">Abdullahi Bello</td>
+                                    <td class="py-3 px-4">₦25,000</td>
+                                    <td class="py-3 px-4">In memory of my father</td>
+                                    <td class="py-3 px-4"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Verified</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="p-4 bg-gray-50 border-t border-gray-200 flex justify-between items-center">
+                        <div class="text-sm text-gray-600">
+                            Showing <span id="start-record">1</span> to <span id="end-record">5</span> of <span id="total-records">12</span> entries
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 border rounded-md bg-white text-gray-700 hover:bg-gray-100">Previous</button>
+                            <button class="px-3 py-1 border rounded-md bg-emerald-600 text-white hover:bg-emerald-700">1</button>
+                            <button class="px-3 py-1 border rounded-md bg-white text-gray-700 hover:bg-gray-100">2</button>
+                            <button class="px-3 py-1 border rounded-md bg-white text-gray-700 hover:bg-gray-100">3</button>
+                            <button class="px-3 py-1 border rounded-md bg-white text-gray-700 hover:bg-gray-100">Next</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-semibold mb-4 text-emerald-800">Total Donations</h3>
+                        <p class="text-3xl font-bold text-emerald-600">₦8,500,000</p>
+                        <p class="text-sm text-gray-600 mt-2">56.7% of ₦15,000,000 goal</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-semibold mb-4 text-emerald-800">Recent Donations</h3>
+                        <p class="text-3xl font-bold text-emerald-600">₦190,000</p>
+                        <p class="text-sm text-gray-600 mt-2">Last 7 days</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-semibold mb-4 text-emerald-800">Total Donors</h3>
+                        <p class="text-3xl font-bold text-emerald-600">247</p>
+                        <p class="text-sm text-gray-600 mt-2">Individuals contributed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Donation amount selection
+        function selectAmount(amount) {
+            document.getElementById('custom-amount').value = amount;
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.donation-card').forEach(button => {
+                button.classList.remove('bg-emerald-100', 'border-emerald-600');
+            });
+            
+            // Add active class to clicked button
+            event.target.classList.add('bg-emerald-100', 'border-emerald-600');
+        }
+
+        // Submit donation form
+        function submitDonation() {
+            const amount = document.getElementById('custom-amount').value;
+            const name = document.getElementById('donor-name').value;
+            
+            if (!amount || isNaN(amount) || amount <= 0) {
+                alert('Please enter a valid donation amount.');
+                return;
+            }
+            
+            if (!name) {
+                alert('Please enter your name.');
+                return;
+            }
+            
+            // In a real application, this would submit to a server
+            // For demo purposes, we'll just show the confirmation
+            
+            document.getElementById('donation-amount').textContent = `₦${parseInt(amount).toLocaleString()}`;
+            showModal('donation-modal');
+            
+            // Reset form
+            document.getElementById('custom-amount').value = '';
+            document.getElementById('donor-name').value = '';
+            document.getElementById('donor-email').value = '';
+            document.getElementById('donor-message').value = '';
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.donation-card').forEach(button => {
+                button.classList.remove('bg-emerald-100', 'border-emerald-600');
+            });
+        }
+
+        // Donation confirmation (for bank transfers)
+        function showDonationConfirmation() {
+            showModal('donation-modal');
+            document.getElementById('donation-message').textContent = "Thank you for supporting the mosque construction project. We will verify your bank transfer and update our records. May Allah reward you abundantly for your contribution.";
+            document.getElementById('donation-amount').textContent = '';
+        }
+
+        // Contact form submission
+        function submitContactForm() {
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const subject = document.getElementById('contact-subject').value;
+            const message = document.getElementById('contact-message').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+            
+            // In a real application, this would submit to a server
+            alert('Thank you for your message. We will get back to you soon.');
+            
+            // Reset form
+            document.getElementById('contact-name').value = '';
+            document.getElementById('contact-email').value = '';
+            document.getElementById('contact-subject').value = '';
+            document.getElementById('contact-message').value = '';
+        }
+
+        // Modal functions
+        function showModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Admin functions
+        function showAdminLogin() {
+            showModal('admin-login-modal');
+        }
+
+        function adminLogin() {
+            const username = document.getElementById('admin-username').value;
+            const password = document.getElementById('admin-password').value;
+            
+            // Hardcoded credentials for demo
+            if (username === 'admin' && password === 'masjid123') {
+                closeModal('admin-login-modal');
+                document.getElementById('admin-panel').classList.remove('hidden');
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+
+        function logoutAdmin() {
+            document.getElementById('admin-panel').classList.add('hidden');
+            document.getElementById('admin-username').value = '';
+            document.getElementById('admin-password').value = '';
+        }
+
+        // Initialize with some sample data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.querySelector('footer .text-emerald-300').textContent = `© ${new Date().getFullYear()} Bells University Mosque Construction Project`;
+        });
+    </script>
+</body>
+</html>
